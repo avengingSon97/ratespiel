@@ -104,7 +104,11 @@ function checkGuess() {
 }
 
 guessSubmit.addEventListener('click', checkGuess);
-
+guessField.addEventListener('keypress', function(event){
+    if(event.key === 'Enter'){
+        checkGuess();
+    }
+})
 
 function setGameOver() {
     guessField.disabled = true;
